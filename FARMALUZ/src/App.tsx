@@ -1,5 +1,5 @@
 import './App.css'
-
+import DeletarCategoria from '../src/components/Categoria/DeletarCategoria/DeletarCategoria'
 import FormularioCategoria from '../src/components/Categoria/FormularioCategoria/FormularioCategoria'
 import ListaCategoria from '../src/components/Categoria/FormularioCategoria/FormularioCategoria'
 import Footer from '../src/components/Footer/Footer'
@@ -8,6 +8,8 @@ import Home from './Pages/Home/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
+import Cadastro from '../src/Pages/Cadastro/Cadastro';
+import Login from './Pages/Login/Login';
 
 
 
@@ -24,14 +26,14 @@ function App() {
                 <Navbar />
                 <div className='min-h-[80vh]'>
                     <Routes>
-                        <Route path="/" element={<Home />} />
-                        
-                        
+                        <Route path="/" element={<Login />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/cadastro" element={<Cadastro />} />
                         <Route path="/home" element={<Home />} />
                         <Route path="/Categorias" element={<ListaCategoria />} />
                         <Route path="/cadastroCategoria" element={<FormularioCategoria />} />
                         <Route path="/editarCategoria/:id" element={<FormularioCategoria />} />
-                        
+                        <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
                         <Route path="/produtos" element={<ListaProdutos />} />
               <Route path="/cadastroprodutos" element={<FormularioProdutos />} />
               <Route path="/editarprodutos/:id" element={<FormularioProdutos />} />
@@ -43,5 +45,4 @@ function App() {
         </AuthProvider>
     );
 }
-
 export default App;
